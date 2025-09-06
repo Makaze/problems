@@ -6,9 +6,20 @@ from re import escape
 def test_debug():
     """Print fpdf version"""
 
-    # With random.seed(0) in testing.py, 6 + 6 is expected output from randint and randrange with range of 0–9
+    packages = [
+        "pygame",
+        "opencv-python",
+        "scikit-learn",
+        "tensorflow",
+        "pillow",
+        "tensorflow",
+        "transformers",
+        "nltk",
+    ]
+
     process = check50.run("pip3 freeze")
     result = process.stdout()
     for line in result.split():
-        process.stdin(line, prompt=False)
+        if any(p in line for p in packages):
+            process.stdin(line, prompt=False)
     process.kill()
