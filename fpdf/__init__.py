@@ -1,6 +1,7 @@
 import check50
 
-debugging_text = ["Debugging" + (" " * 30) for _ in range(100)].join("\n")
+debugging_text = "\n".join(["Debugging" + (" " * 30) for _ in range(100)])
+
 
 @check50.check()
 def test_debug():
