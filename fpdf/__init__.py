@@ -9,6 +9,6 @@ def test_debug():
     # With random.seed(0) in testing.py, 6 + 6 is expected output from randint and randrange with range of 0–9
     process = check50.run("pip3 freeze")
     result = process.stdout()
-    for line in result.splitlines():
-        process.stdin(line)
+    for line in result.split():
+        process.stdin(line, prompt=False)
     process.kill()
