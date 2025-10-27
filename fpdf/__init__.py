@@ -20,7 +20,7 @@ def test_debug():
         "fonttools",
     ]
 
-    process = check50.run("pip3 show fpdf2")
+    process = check50.run("pip3 freeze")
     result = process.stdout()
     for line in result.split():
         if any(p in line for p in packages):
