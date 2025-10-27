@@ -15,6 +15,7 @@ def test_debug():
         "tensorflow",
         "transformers",
         "nltk",
+        "fpdf",
     ]
 
     process = check50.run("pip3 freeze")
