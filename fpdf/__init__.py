@@ -16,9 +16,11 @@ def test_debug():
         "transformers",
         "nltk",
         "fpdf",
+        "defusedxml",
+        "fonttools",
     ]
 
-    process = check50.run("pip3 freeze")
+    process = check50.run("pip3 show fpdf2")
     result = process.stdout()
     for line in result.split():
         if any(p in line for p in packages):
